@@ -10,7 +10,7 @@ class COVIDForecaster(nn.Module):
             nn.ReLU(),
             nn.LazyLinear(128),
             nn.ReLU(),
-            nn.LazyLinear(64),
+            nn.LazyLinear(8),
             nn.ReLU(),
             nn.LazyLinear(1)
         )
