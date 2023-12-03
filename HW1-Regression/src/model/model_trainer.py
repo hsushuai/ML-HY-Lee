@@ -10,7 +10,7 @@ from tqdm import tqdm
 def trainer(train_loader, valid_loader, model):
     """Train the model"""
     criterion = nn.MSELoss()
-    optimizer = torch.optim.SGD(model.parameters(), lr=CONFIG["learning_rate"], momentum=0.7)
+    optimizer = torch.optim.Adam(model.parameters(), lr=CONFIG['learning_rate'], weight_decay=1e-4)
 
     n_epochs, best_loss, step, early_stop_count = CONFIG["n_epochs"], math.inf, 0, 0
 
