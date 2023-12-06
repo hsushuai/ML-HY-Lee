@@ -7,5 +7,5 @@ def select_feat(train_data, valid_data, test_data, select_all=True):
         feat_idx = list(range(raw_x_train.shape[1]))
     else:
         # TODO: Select suitable features columns
-        feat_idx = [35, 37, 38, 39, 42, 43, 46, 49, 52, 53, 55, 56, 57, 60, 61, 64, 67, 71, 73, 70, 74, 75]
+        feat_idx = list(range(35, raw_x_train.shape[1]))
     return raw_x_train[:, feat_idx], raw_x_valid[:, feat_idx], raw_x_test[:, feat_idx], y_train, y_valid
