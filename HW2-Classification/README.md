@@ -2,6 +2,8 @@
 
 ## Description
 
+[Kaggle link](https://www.kaggle.com/competitions/ml2023spring-hw2)
+
 - Phoneme 分类任务
 - Training data: 3429 个预处理后的音频 (2116794 frames)
 - Testing data: 857 个预处理后的音频 (527364 frames)
