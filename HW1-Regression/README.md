@@ -9,3 +9,11 @@
 - Testing data: 997 samples
 - Evaluation metric: Mean Squared Error (MSE)
 
+### Baseline
+
+|        | Score   |
+|--------|---------|
+| boss   | 0.81456 |
+| strong | 0.92619 |
+| medium | 1.15678 |
+| simple | 1.96993 |
