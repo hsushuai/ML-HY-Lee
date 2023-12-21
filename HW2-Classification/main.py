@@ -19,4 +19,6 @@ model.load_state_dict(torch.load(model_path))
 test_loader = create_dataloader(data_path, False)
 predict_and_save(test_loader, model, preds_path)
 
-print(f"\n{Fore.GREEN}🥳 DONE!{Style.RESET_ALL}")
+print(f"\n{Fore.GREEN}🥳 DONE!{Style.RESET_ALL}\n")
+
+print("[HINT] - # You can run `tensorboard --logdir runs` to visualize training process")
