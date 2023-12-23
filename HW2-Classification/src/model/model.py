@@ -2,16 +2,20 @@ from torch import nn
 
 
 class PhonemeClassifier(nn.Module):
-    def __init__(self):
+    def __init__(self, num_blocks=4, dropout=0.5):
         super().__init__()
-        # TODO: Modify the model structure
-        self.net = nn.Sequential(nn.LazyLinear(128),
-                                 nn.ReLU(),
-                                 nn.LazyLinear(256),
-                                 nn.ReLU(),
-                                 nn.LazyLinear(256),
-                                 nn.ReLU(),
-                                 nn.LazyLinear(41))
+        self.blocks = nn.ModuleList([
+            nn.Sequential(
+                nn.LazyLinear(256),
+                nn.ReLU(),
+                nn.LayerNorm(256),
+                nn.Dropout(dropout)
+            ) for _ in range(num_blocks)
+        ])
+        self.linear = nn.LazyLinear(41)
 
     def forward(self, x):
-        return self.net(x)
+        for block in self.blocks:
+            x = block(x)
+
+        return self.linear(x)
